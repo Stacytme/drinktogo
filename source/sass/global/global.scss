@@ -1,0 +1,77 @@
+/* здесь используйте глобальные селекторы img, body, html и так далее*/
+
+.button {
+  box-sizing: border-box;
+  width: 141px;
+  min-height: 36px;
+  font-family: $fonts;
+  font-size: 14px;
+  line-height: 20px;
+  background-color: $Base-Primary;
+  color: $Base-White;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $Primary-Lighter;
+  }
+
+  &:active {
+    background-color: $Primary-Darker;
+  }
+
+  &:disabled {
+    color: $Base-White;
+    background-color: $Light-Grey;
+  }
+
+  @media (min-width: $tablet-width) {
+    min-width: 138px;
+    padding: 8px 5px;
+  }
+
+  &--submit {
+    width: 160px;
+    min-height: 45px;
+    line-height: 24px;
+
+    @media (min-width: $tablet-width) {
+      padding: 0;
+      width: 147px;
+      min-height: 40px;
+    }
+  }
+
+  &--reset {
+    width: 160px;
+    min-height: 45px;
+    background-color: $Base-White;
+    color: $Base-Primary;
+    line-height: 24px;
+
+    @media (min-width: $tablet-width) {
+      width: 147px;
+      min-height: 40px;
+      padding: 0;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $Base-White;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

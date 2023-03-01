@@ -1,0 +1,105 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  list-style-type: none;
+
+  @media (min-width: $tablet-width) {
+    justify-content: flex-end;
+    width: auto;
+  }
+}
+
+.pagination__item {
+  &--first-page {
+    @media (min-width: $tablet-width) {
+      margin-left: 20px;
+    }
+  }
+
+  &--current {
+    @media (min-width: $tablet-width) {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+
+  &--last-page {
+    @media (min-width: $tablet-width) {
+      margin-right: 25px;
+    }
+  }
+}
+
+.pagination__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 40px;
+  min-height: 40px;
+  font-size: 16px;
+  line-height: 24px;
+  color: $Base-Primary;
+  background-color: $Base-White;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &--current {
+    font-weight: 600;
+    color: $Base-Black;
+    background-color: transparent;
+  }
+
+  &--next .pagination__text {
+    @media (min-width: $tablet-width) {
+      padding-left: 10px;
+      border-radius: 0 4px 4px 0;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: $Base-White;
+    background-color: $Primary-Lighter;
+  }
+
+  &:active {
+    background-color: $Primary-Darker;
+  }
+
+  &--disabled {
+    color: $Base-White;
+    background-color: $Light-Grey;
+
+    &:hover,
+    &focus {
+      background-color: $Light-Grey;
+    }
+  }
+
+  &:hover .pagination__text,
+  &:focus .pagination__text {
+    color: $Base-White;
+  }
+}
+
+.pagination__text {
+  display: none;
+  font-size: 14px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 24px;
+    display: block;
+    min-width: 90px;
+    text-align: center;
+  }
+}
+
+.pagination__icon {
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
